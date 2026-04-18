@@ -1,0 +1,38 @@
+{
+  "name": "infra project",
+  "version": "0.1.0",
+  "bin": {
+    "infra project": "bin/infra project.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "vitest run",
+    "test:unit": "vitest run --project unit",
+    "test:property": "vitest run --project property",
+    "test:integration": "vitest run --project integration",
+    "test:watch": "vitest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.161",
+    "@types/jsonwebtoken": "9.0.10",
+    "@types/node": "24.12.2",
+    "@types/uuid": "10.0.0",
+    "aws-cdk": "2.1118.0",
+    "esbuild": "0.28.0",
+    "fast-check": "4.6.0",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.9.3",
+    "vitest": "3.2.4"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.248.0",
+    "aws-lambda": "1.0.7",
+    "aws-sdk": "2.1693.0",
+    "constructs": "^10.5.0",
+    "ioredis": "5.10.1",
+    "jsonwebtoken": "9.0.3",
+    "uuid": "13.0.0"
+  }
+}
