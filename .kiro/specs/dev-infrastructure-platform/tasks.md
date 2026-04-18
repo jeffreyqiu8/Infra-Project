@@ -28,8 +28,8 @@ This plan implements a modular, serverless backend platform on AWS using CDK (Ty
     - Create `src/models/dynamo.ts` with DynamoDB key pattern helpers and entity type constants
     - _Requirements: 1.1–1.5, 2.1–2.6, 3.1–3.8, 4.1–4.9, 5.1–5.9, 6.1–6.7, 8.1–8.5_
 
-- [ ] 2. Implement Gateway Lambda with request pipeline
-  - [ ] 2.1 Implement request schema validation
+- [x] 2. Implement Gateway Lambda with request pipeline
+  - [x] 2.1 Implement request schema validation
     - Create `src/middleware/schema-validator.ts`
     - Validate incoming `GatewayEvent` against a JSON schema (required fields: `httpMethod`, `path`, `headers`)
     - Return descriptive 400 errors identifying the specific validation failure
@@ -41,7 +41,7 @@ This plan implements a modular, serverless backend platform on AWS using CDK (Ty
     - Verify: conforming requests are accepted, non-conforming requests produce 400 with descriptive error
     - **Validates: Requirements 1.2, 1.3**
 
-  - [ ] 2.3 Implement route matching and dispatcher
+  - [x] 2.3 Implement route matching and dispatcher
     - Create `src/middleware/router.ts`
     - Implement route registration and matching by HTTP method and path (including path parameters like `/jobs/{id}`)
     - Return 404 for unmatched routes
@@ -53,7 +53,7 @@ This plan implements a modular, serverless backend platform on AWS using CDK (Ty
     - Verify: matching routes dispatch to the correct handler, non-matching routes produce 404
     - **Validates: Requirements 1.4, 1.5**
 
-  - [ ] 2.5 Implement the Gateway Lambda handler with middleware pipeline orchestration
+  - [x] 2.5 Implement the Gateway Lambda handler with middleware pipeline orchestration
     - Create `src/handlers/gateway.ts`
     - Orchestrate the full pipeline: assign correlation ID → schema validation → auth → rate limit → cache check → route → cache store → response
     - Wire middleware components together with early-exit on auth/rate-limit/validation failures
