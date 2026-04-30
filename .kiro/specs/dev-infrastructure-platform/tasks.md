@@ -67,11 +67,11 @@ This plan implements a modular, serverless backend platform on AWS using CDK (Ty
     - Test 404 for unknown routes
     - _Requirements: 1.1–1.5, 6.6_
 
-- [ ] 3. Checkpoint
+- [x] 3. Checkpoint
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 4. Implement Auth Middleware
-  - [ ] 4.1 Implement API key authentication
+- [x] 4. Implement Auth Middleware
+  - [x] 4.1 Implement API key authentication
     - Create `src/middleware/auth.ts` implementing the `AuthMiddleware` interface
     - Look up API key by SHA-256 hash in DynamoDB (`APIKEY#{keyHash}` / `META`)
     - On valid key: return `AuthResult` with `userId`, `applicationId`, `authMethod: 'api-key'`
@@ -79,7 +79,7 @@ This plan implements a modular, serverless backend platform on AWS using CDK (Ty
     - Check `x-api-key` header first before JWT
     - _Requirements: 2.1, 2.2, 2.3, 2.5, 2.6_
 
-  - [ ] 4.2 Implement JWT authentication
+  - [x] 4.2 Implement JWT authentication
     - Add JWT verification to `src/middleware/auth.ts`
     - Verify token signature using cached JWKS public key set
     - Validate token expiration
